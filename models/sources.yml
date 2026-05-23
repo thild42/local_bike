@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: local_bike
-    schema: bronze
+    schema: dbt
     tables:
       - name: brands
       - name: categories
