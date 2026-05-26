@@ -1,22 +1,21 @@
-
 version: 2
 
 models:
-  - name: silver_local_bike__brands
+  - name: stg_local_bike__brands
     columns:
       - name: brand_id
         tests:
           - unique
           - not_null
       - name: brand_name
-  - name: silver_local_bike__categories
+  - name: stg_local_bike__categories
     columns:
       - name: category_id
         tests:
           - unique
           - not_null
       - name: category_name
-  - name: silver_local_bike__customers
+  - name: stg_local_bike__customers
     columns:
       - name: customer_id
         tests:
@@ -30,7 +29,7 @@ models:
       - name: customer_zip_code
       - name: customer_city
       - name: customer_state
-  - name: silver_local_bike__orders
+  - name: stg_local_bike__orders
     columns:
       - name: order_id
         tests:
@@ -39,29 +38,29 @@ models:
       - name: customer_id
         tests:
           - relationships:
-              name: customer_id_foreign_key_in_silver_local_bike__orders
+              name: customer_id_foreign_key_in_stg_local_bike__orders
               arguments:
-                to: ref('silver_local_bike__customers')
+                to: ref('stg_local_bike__customers')
                 field: customer_id
       - name: staff_id
         tests:
           - relationships:
-              name: staff_id_foreign_key_in_silver_local_bike__orders
+              name: staff_id_foreign_key_in_stg_local_bike__orders
               arguments:
-                to: ref('silver_local_bike__staffs')
+                to: ref('stg_local_bike__staffs')
                 field: staff_id
       - name: store_id
         tests:
           - relationships:
-              name: store_id_foreign_key_in_silver_local_bike__orders
+              name: store_id_foreign_key_in_stg_local_bike__orders
               arguments:
-                to: ref('silver_local_bike__stores')
+                to: ref('stg_local_bike__stores')
                 field: store_id
       - name: order_placed_at
       - name: order_required_at
       - name: order_shipped_at
       - name: order_status
-  - name: silver_local_bike__order_items
+  - name: stg_local_bike__order_items
     columns:
       - name: order_item_id
         tests:
@@ -69,21 +68,21 @@ models:
       - name: order_id
         tests:
           - relationships:
-              name: order_id_foreign_key_in_silver_local_bike__order_items
+              name: order_id_foreign_key_in_stg_local_bike__order_items
               arguments:
-                to: ref('silver_local_bike__orders')
+                to: ref('stg_local_bike__orders')
                 field: order_id
       - name: product_id
         tests:
           - relationships:
-              name: product_id_foreign_key_in_silver_local_bike__order_items
+              name: product_id_foreign_key_in_stg_local_bike__order_items
               arguments:
-                to: ref('silver_local_bike__products')
+                to: ref('stg_local_bike__products')
                 field: product_id
       - name: order_item_price
       - name: order_item_quantity
       - name: order_item_discount
-  - name: silver_local_bike__products
+  - name: stg_local_bike__products
     columns:
       - name: product_id
         tests:
@@ -92,21 +91,21 @@ models:
       - name: category_id
         tests:
           - relationships:
-              name: category_id_foreign_key_in_silver_local_bike__products
+              name: category_id_foreign_key_in_stg_local_bike__products
               arguments:
-                to: ref('silver_local_bike__categories')
+                to: ref('stg_local_bike__categories')
                 field: category_id
       - name: brand_id
         tests:
           - relationships:
-              name: brand_id_foreign_key_in_silver_local_bike__products
+              name: brand_id_foreign_key_in_stg_local_bike__products
               arguments:
-                to: ref('silver_local_bike__brands')
+                to: ref('stg_local_bike__brands')
                 field: brand_id
       - name: product_name
       - name: product_price
       - name: product_model_year
-  - name: silver_local_bike__staffs
+  - name: stg_local_bike__staffs
     columns:
       - name: staff_id
         tests:
@@ -115,40 +114,40 @@ models:
       - name: manager_id
         tests:
           - relationships:
-              name: manager_id_foreign_key_in_silver_local_bike__staffs
+              name: manager_id_foreign_key_in_stg_local_bike__staffs
               arguments:
-                to: ref('silver_local_bike__staffs')
+                to: ref('stg_local_bike__staffs')
                 field: manager_id
       - name: store_id
         tests:
           - relationships:
-              name: store_id_foreign_key_in_silver_local_bike__stores
+              name: store_id_foreign_key_in_stg_local_bike__stores
               arguments:
-                to: ref('silver_local_bike__stores')
+                to: ref('stg_local_bike__stores')
                 field: store_id
       - name: staff_first_name
       - name: staff_last_name
       - name: staff_email
       - name: staff_phone
       - name: staff_active
-  - name: silver_local_bike__stocks
+  - name: stg_local_bike__stocks
     columns:
       - name: product_id
         tests:
           - relationships:
-              name: product_id_foreign_key_in_silver_local_bike__stocks
+              name: product_id_foreign_key_in_stg_local_bike__stocks
               arguments:
-                to: ref('silver_local_bike__products')
+                to: ref('stg_local_bike__products')
                 field: product_id
       - name: store_id
         tests:
           - relationships:
-              name: store_id_foreign_key_in_silver_local_bike__stores
+              name: store_id_foreign_key_in_stg_local_bike__stores
               arguments:
-                to: ref('silver_local_bike__stores')
+                to: ref('stg_local_bike__stores')
                 field: store_id
       - name: staff_quantity
-  - name: silver_local_bike__stores
+  - name: stg_local_bike__stores
     columns:
       - name: store_id
         tests:
