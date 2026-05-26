@@ -6,6 +6,3 @@ select
     list_price as product_price,
     cast(model_year as int) as product_model_year
 from {{ source('local_bike', 'products') }}
-
-
-

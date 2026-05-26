@@ -8,6 +8,3 @@ select
     shipped_date as order_shipped_at,
     (case order_status when 1 then 'Pending' when 2 then 'Processing' when 3 then 'Rejected' when 4 then 'Completed' end) as order_status
 from {{ source('local_bike', 'orders') }}
-
-
-

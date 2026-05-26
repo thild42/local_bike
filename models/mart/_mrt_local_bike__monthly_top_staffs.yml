@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: _mrt_local_bike__monthly_top_staffs
+    columns:
+      - name: staff_name
+      - name: month
+      - name: total_price

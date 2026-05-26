@@ -8,6 +8,3 @@ select
     phone as staff_phone,
     active as staff_active
 from {{ source('local_bike', 'staffs') }}
-
-
-

@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: _mrt_local_bike__monthly_top_customers
+    description: '{{ doc("mrt_order_daily_report") }}'
+    columns:
+      - name: customer_name
+      - name: month
+      - name: total_price
