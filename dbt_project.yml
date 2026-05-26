@@ -39,3 +39,7 @@ models:
   local_bike:
     staging:
       +materialized: table
+    intermediate:
+      +materialized: table
+    mart:
+      +materialized: table

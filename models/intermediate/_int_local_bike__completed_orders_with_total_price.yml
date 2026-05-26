@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: _int_local_file__completed_orders_with_total_price
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+      - name: staff_id
+      - name: store_id
+      - name: order_placed_at
+      - name: order_total_price

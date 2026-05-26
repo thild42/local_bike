@@ -6,7 +6,3 @@ select
     cast(quantity as int) as order_item_quantity,
     discount as order_item_discount
 from {{ source('local_bike', 'order_items') }}
-
-
-
-

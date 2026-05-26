@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: _int_local_file__products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+      - name: brand_name
+      - name: product_name
+      - name: product_price
+      - name: product_model_year

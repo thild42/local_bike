@@ -9,6 +9,3 @@ select
     city as customer_city,
     state as customer_state
 from {{ source('local_bike', 'customers') }}
-
-
-
