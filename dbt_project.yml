@@ -37,5 +37,5 @@ models:
     columns: true
 
   local_bike:
-    silver:
+    staging:
       +materialized: table
